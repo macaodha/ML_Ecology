@@ -17,4 +17,8 @@ plot(flower_data$Petal_Length, flower_data$Petal_Width)
 
 # plot the Species type in color
 # pch is the format of the plotted circles - here filled circles
-plot(flower_data$Petal_Length, flower_data$Petal_Width, pch=21, bg=c("red","green","blue")[unclass(flower_data$Species)])
+# we also make sure that the axis are in the same units
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
+
+# add legend 
+legend(x=1, y=2.5, legend = levels(flower_data$Species), col = c(1:3), pch = 16)

@@ -75,7 +75,7 @@ Or 2D:
 plot(c(4,5,6), c(1, 1, 2))
 
 Plot iris with different colors. pch is the format of the plotted circles - here filled circles:
-plot(my_data$Petal_Length, my_data$Petal_Width, pch=21, bg=c("red","green","blue")[unclass(my_data$Species)])
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16)
 
 To save an open plot to disc:
 dev.print(pdf, 'filename.pdf')
