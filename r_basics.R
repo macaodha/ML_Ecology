@@ -49,7 +49,7 @@ To call:
 my_function('print this')
 
 Load csv into DataFrame:
-my_data = read.csv("iris.csv")
+my_data <- read.csv("iris.csv")
 
 Get the column names:
 names(my_data)
@@ -75,11 +75,12 @@ Or 2D:
 plot(c(4,5,6), c(1, 1, 2))
 
 Plot iris with different colors. pch is the format of the plotted circles - here filled circles:
-plot(my_data$Petal_Length, my_data$Petal_Width, pch=21, bg=c("red","green3","blue")[unclass(my_data$Species)])
+plot(my_data$Petal_Length, my_data$Petal_Width, pch=21, bg=c("red","green","blue")[unclass(my_data$Species)])
 
 To save an open plot to disc:
 dev.print(pdf, 'filename.pdf')
 
 Generate random uniform numbers. Here, generate 10 random numbers between 0 and 1:
 runif(10, 0,1)
+
 
