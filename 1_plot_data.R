@@ -1,4 +1,4 @@
-## Here we will load in some data and plot it
+## 1 Here we will load in some data and plot it
 
 # load data from csv file
 flower_data <- read.csv('iris_subset.csv')
@@ -21,4 +21,4 @@ plot(flower_data$Petal_Length, flower_data$Petal_Width)
 plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
 
 # add legend 
-legend(x=1, y=2.5, legend = levels(flower_data$Species), col = c(1:3), pch = 16)
+legend(x=1, y=4, legend = levels(flower_data$Species), col = c(1:3), pch = 16)

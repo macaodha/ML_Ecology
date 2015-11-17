@@ -1,4 +1,4 @@
-## Nearest neighbour classifier
+## 2 Nearest neighbour classifier
 
 # load data from csv file
 flower_data <- read.csv('iris_subset.csv')
@@ -21,8 +21,8 @@ test_point[1] <- min(flower_data[,1]) + test_point[1]*(max(flower_data[,1]) - mi
 test_point[2] <- min(flower_data[,2]) + test_point[2]*(max(flower_data[,2]) - min(flower_data[,2]))
 
 # print test point values
-print(paste("Test Petal_Length ", test_point[1]))
-print(paste("Test Petal_Width ", test_point[2]))
+print(paste("Test Petal_Length: ", test_point[1]))
+print(paste("Test Petal_Width: ", test_point[2]))
 
 # plot the test point as an X
 points(test_point[1], test_point[2], pch=4, cex=2)
@@ -30,14 +30,14 @@ points(test_point[1], test_point[2], pch=4, cex=2)
 # compute the distance from the test point to every example in the dataset
 distance <- apply(flower_data[,1:2],1,function(x)sqrt(sum((x-test_point)^2)))
 
-# find the point in the dataset that is closest to the test point
+# find the point in the dataset that is closest to the test point and record its distance
 closest_point = which.min(distance)
 distance_to_closest = min(distance)
 print(paste("Distance to closest point: ", distance_to_closest))
 
 # assume the test point is the same class as the datapoint it is closest too
-predicted_class = flower_data[closest_point, ]$Species
-print(paste("Predicted species: ", predicted_class))
+predicted_species <- flower_data[closest_point, ]$Species
+print(paste("Predicted species: ", predicted_species))
 
 # plot a ring around the nearest datapoint
 points(flower_data[closest_point, 1], flower_data[closest_point, 2], pch=1, cex=1.5)
