@@ -1,5 +1,11 @@
 ## 3 K Nearest Neighbours
 
+
+
+# #### TODO check this works properly
+
+
+
 # load data from csv file
 flower_data <- read.csv('iris_subset.csv')
 
