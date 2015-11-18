@@ -1,12 +1,19 @@
 ## 5 Nonlinear regression with random forest
+#
+# Here we will compare a linear and nonlinear regressor for a 
+# 1 dimensional regression task.
+# 
 
 # load the random forest package
 library(randomForest)
 
 # create a dataset
-# here y is some nonlinear function of x 
+# here y is a nonlinear function of x 
 x <- seq(0, 100, 2.0)
-y <- sin(x/10) + (x/50)^2 + rnorm(length(x))*0.1
+y_ideal <- sin(x/10) + (x/50)^2
+
+# add some noise to our target variable y
+y <- y_ideal + rnorm(length(y))*0.1
 train_data <- data.frame(x, y)
 
 # fit linear model
@@ -22,8 +29,9 @@ lines(x, rf_train_fit, type='l', col=2)
 abline(lin, col=3)
 legend(x='topleft', legend=c('data', 'forest', 'linear'), col=c(1, 2, 3), pch=1)
 
-# make a prediction
-x_test <- data.frame(x=50)
+# generate a random test point (sample between 0 and 100)
+rand_point <- runif(1, 0, 100)
+x_test <- data.frame(x=rand_point)
 
 # linear model
 # y = slope x + intercept

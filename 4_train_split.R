@@ -1,4 +1,8 @@
 ## 4 Train/validation split
+#
+# Here we will split our training data into a training and validation sets 
+# and compute classification accuracy.
+# 
 
 # load the random forest package
 library(randomForest)
@@ -13,8 +17,8 @@ validation_indices <- sample(1:nrow(flower_data), 50, replace = FALSE)
 train_indices <- setdiff(seq(1, nrow(flower_data)), validation_indices)
 
 # create the new dataframes
-validation_data <- flower_data[validation_indices,]
 train_data <- flower_data[train_indices,]
+validation_data <- flower_data[validation_indices,]
 print(paste("Number of training samples: ", nrow(train_data)))
 print(paste("Number of validation samples: ", nrow(validation_data)))
 

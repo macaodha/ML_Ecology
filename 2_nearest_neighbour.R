@@ -1,4 +1,7 @@
 ## 2 Nearest neighbour classifier
+#
+# Here we will find the nearest point in our dataset to a given test point.
+# 
 
 # load data from csv file
 flower_data <- read.csv('flower_dataset.csv')

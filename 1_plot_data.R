@@ -1,4 +1,7 @@
-## 1 Here we will load in some data and plot it
+## 1 Plotting
+#
+# Here we will load in some data and plot it
+# 
 
 # load data from csv file
 flower_data <- read.csv('flower_dataset.csv')

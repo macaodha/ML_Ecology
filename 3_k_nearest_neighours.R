@@ -1,4 +1,8 @@
 ## 3 K Nearest Neighbours
+#
+# Instead of comparing to the nearest neighbour, we instead compare the
+# test point to several nearest neighbours.
+# 
 
 
 
