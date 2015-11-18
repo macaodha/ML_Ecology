@@ -7,7 +7,7 @@ flower_data <- read.csv('flower_dataset.csv')
 print(names(flower_data))
 
 # number of rows
-print(nrow(flower_data))
+print(paste("Number of datapoints: ", nrow(flower_data)))
 
 # first few examples
 print(head(flower_data))
