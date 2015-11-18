@@ -1,7 +1,7 @@
 ## 2 Nearest neighbour classifier
 
 # load data from csv file
-flower_data <- read.csv('iris_subset.csv')
+flower_data <- read.csv('flower_dataset.csv')
 
 # plot dataset
 plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)

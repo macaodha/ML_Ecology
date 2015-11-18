@@ -1,10 +1,10 @@
-## 4 Train/test split
+## 4 Train/validation split
 
 # load the random forest package
 library(randomForest)
 
 # load data from csv file
-flower_data <- read.csv('iris_subset.csv')
+flower_data <- read.csv('flower_dataset.csv')
 
 train_data <- flower_data[seq(1, nrow(flower_data), 2),]
 test_data <- flower_data[seq(2, nrow(flower_data), 2),]

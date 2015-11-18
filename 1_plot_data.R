@@ -1,7 +1,7 @@
 ## 1 Here we will load in some data and plot it
 
 # load data from csv file
-flower_data <- read.csv('iris_subset.csv')
+flower_data <- read.csv('flower_dataset.csv')
 
 # column names
 print(names(flower_data))

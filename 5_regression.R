@@ -20,7 +20,7 @@ rf_train_fit <- predict(rf, train_data)
 plot(x, y, col=1)
 lines(x, rf_train_fit, type='l', col=2)
 abline(lin, col=3)
-legend(x=0, y=3.5, legend=c('data', 'RF', 'linear'), col=c(1, 2, 3), pch=1)
+legend(x=0, y=3.5, legend=c('data', 'forest', 'linear'), col=c(1, 2, 3), pch=1)
 
 # make a prediction
 x_test <- data.frame(x=50)
