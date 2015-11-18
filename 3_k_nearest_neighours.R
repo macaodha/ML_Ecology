@@ -11,7 +11,7 @@ flower_data <- read.csv('flower_dataset.csv')
 
 # plot dataset
 plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
-legend(x=1, y=4, legend = levels(flower_data$Species), col = c(1:3), pch = 16)
+legend(x='topleft', legend = levels(flower_data$Species), col = c(1:3), pch = 16)
 
 # create a test point
 test_point <- c(3.1, 1.23)

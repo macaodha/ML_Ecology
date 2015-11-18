@@ -21,4 +21,4 @@ plot(flower_data$Petal_Length, flower_data$Petal_Width)
 plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
 
 # add legend 
-legend(x=1, y=4, legend = levels(flower_data$Species), col = c(1:3), pch = 16)
+legend(x='topleft', legend = levels(flower_data$Species), col = c(1:3), pch = 16)
