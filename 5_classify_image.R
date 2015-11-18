@@ -11,11 +11,10 @@ library(randomForest)
 # load image and convert it to a matrix
 # here the image is stored in black and white in a csv file 
 # 0 represents black and 255 represents white
-im <-read.csv('uk_ire_gray.csv', header=FALSE)
-im_matrix <- as.matrix(im)
+im <-read.csv('data/uk_ire_gray.csv', header=FALSE)
 
-# plot image
-image(im_matrix, col=gray.colors(255))
+# convert to matrix and plot size
+im_matrix <- as.matrix(im)
 print(paste("Height in pixels: ", ncol(im_matrix)))
 print(paste("Width in pixels: ", nrow(im_matrix)))
  
@@ -42,12 +41,18 @@ probability_of_land <- im_prediction[,1]
 # convert back to matrix
 probability_of_land_matrix <- matrix(probability_of_land, nrow = nrow(im_matrix), ncol = ncol(im_matrix))
 
-# display result
-#image(probability_of_land_matrix, col=gray.colors(255))
-image(probability_of_land_matrix > 0.5, col=gray.colors(255))
-
 # compute the percentage of pixels that are predicted as land
 percentage_of_land_cover <- sum(probability_of_land_matrix>0.5) / length(probability_of_land_matrix)
-print(paste("Predicted percentage of land cover: ", 100*percentage_of_land_cover))
+print(paste("Predicted percentage of land pixels: ", 100*percentage_of_land_cover))
+
+# plot the input image
+image(im_matrix, col=gray.colors(255))
+title('input aerial image')
+
+dev.new()
+#image(probability_of_land_matrix, col=gray.colors(255))
+image(probability_of_land_matrix > 0.5, col=gray.colors(255))
+title('land prediction')
+
 
 

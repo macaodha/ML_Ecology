@@ -8,7 +8,7 @@
 library(randomForest)
 
 # load data from csv file
-flower_data <- read.csv('flower_dataset.csv')
+flower_data <- read.csv('data/flower_dataset.csv')
 
 # split the data into validation and test
 # randomly choose take 50 datapoints for validation

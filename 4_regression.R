@@ -12,8 +12,8 @@ library(randomForest)
 x <- seq(0, 100, 2.0)
 y_ideal <- sin(x/10) + (x/50)^2
 
-# add some noise to our target variable y
-y <- y_ideal + rnorm(length(y))*0.1
+# add some noise to our target variable y_ideal
+y <- y_ideal + rnorm(length(y_ideal))*0.1
 train_data <- data.frame(x, y)
 
 # fit linear model
@@ -27,7 +27,8 @@ rf_train_fit <- predict(rf, train_data)
 plot(x, y, col=1)
 lines(x, rf_train_fit, type='l', col=2)
 abline(lin, col=3)
-legend(x='topleft', legend=c('data', 'forest', 'linear'), col=c(1, 2, 3), pch=1)
+legend_text = c('data', 'random forest', 'linear regression')
+legend(x='topleft', legend=legend_text, col=c(1, 2, 3), pch=1)
 
 # generate a random test point (sample between 0 and 100)
 rand_point <- runif(1, 0, 100)

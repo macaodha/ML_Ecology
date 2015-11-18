@@ -4,7 +4,7 @@
 # 
 
 # load data from csv file
-flower_data <- read.csv('flower_dataset.csv')
+flower_data <- read.csv('data/flower_dataset.csv')
 
 # column names
 print(names(flower_data))
