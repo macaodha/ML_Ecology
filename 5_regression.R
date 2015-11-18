@@ -1,7 +1,7 @@
 ## 5 Nonlinear regression with random forest
 #
 # Here we will compare a linear and nonlinear regressor for a 
-# 1 dimensional regression task.
+# one dimensional regression task.
 # 
 
 # load the random forest package
