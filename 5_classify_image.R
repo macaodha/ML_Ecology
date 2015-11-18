@@ -1,3 +1,10 @@
+## 5 Image classification
+#
+# In this example we will classify the pixels in an image as being 
+# either 'land' or 'other'. We will use the pixel intensite values
+# features to our classifier. 
+# 
+
 # load random forest package for classification 
 library(randomForest)
 
