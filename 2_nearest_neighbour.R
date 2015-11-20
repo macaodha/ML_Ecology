@@ -6,10 +6,6 @@
 # load data from csv file
 flower_data <- read.csv('data/flower_dataset.csv')
 
-# plot dataset
-plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
-legend(x='topleft', legend = levels(flower_data$Species), col = c(1:3), pch = 16)
-
 # create new test point
 #test_point <- c(3.1, 1.23)
 #test_point <- c(6.4, 2.2)
@@ -27,9 +23,6 @@ test_point[2] <- min(flower_data[,2]) + test_point[2]*(max(flower_data[,2]) - mi
 print(paste("Test Petal_Length: ", test_point[1]))
 print(paste("Test Petal_Width: ", test_point[2]))
 
-# plot the test point as an X
-points(test_point[1], test_point[2], pch=4, cex=2)
-
 # compute the distance from the test point to every example in the dataset
 distance <- apply(flower_data[,1:2],1,function(x)sqrt(sum((x-test_point)^2)))
 
@@ -42,5 +35,15 @@ print(paste("Distance to closest point: ", distance_to_closest))
 predicted_species <- flower_data[closest_point, ]$Species
 print(paste("Predicted species: ", predicted_species))
 
+# plot dataset
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
+
+# plot the test point as an X
+points(test_point[1], test_point[2], pch=4, cex=2)
+
 # plot a ring around the nearest datapoint
 points(flower_data[closest_point, 1], flower_data[closest_point, 2], pch=1, cex=1.5)
+
+# insert legend
+legend_text <- c(levels(flower_data$Species), 'test point', 'nearest training point')
+legend(x='topleft', legend=legend_text, col=c(1, 2, 3, 1, 1), pch=c(16, 16, 16, 4, 1))
