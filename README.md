@@ -6,6 +6,5 @@ randomForest
 
 Install by typing the following command into the R console:
 ```
-install.packages('randomForest')
+install.packages('RMySQL', repos='http://cran.us.r-project.org')
 ```
-
