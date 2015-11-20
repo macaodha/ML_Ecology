@@ -1,7 +1,7 @@
 ## 3 Classification with train/validation split
 #
-# Here we will split our training data into a training and validation sets 
-# and compute classification accuracy.
+# Here we will split our training data into a training and validation sets and
+# compute classification accuracy.
 # 
 
 # load the random forest package

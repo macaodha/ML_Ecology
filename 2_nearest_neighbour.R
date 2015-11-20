@@ -18,7 +18,7 @@ legend(x='topleft', legend = levels(flower_data$Species), col = c(1:3), pch = 16
 #test_point <- c(6.4, 2.2)
 #test_point <- c(4.3, 1.8)
 
-# random point
+# random test point
 test_point <- runif(2, 0,1)
 test_point[1] <- min(flower_data[,1]) + test_point[1]*(max(flower_data[,1]) - min(flower_data[,1]))
 test_point[2] <- min(flower_data[,2]) + test_point[2]*(max(flower_data[,2]) - min(flower_data[,2]))

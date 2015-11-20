@@ -1,11 +1,9 @@
 ## 5 Pixel classification
 #
-# In this example we will classify the pixels in an image as being 
-# either 'land' or 'other'. We will use the pixel intensite values
-# features to our classifier. 
+# In this example we will classify the pixels in an image as being either 'land'
+# or 'other'. We will use the pixel intensite values features to our classifier.
 # 
-# Have a look at the image data/uk_ire_gray.png to see what we are 
-# working with.
+# Have a look at the image data/uk_ire_gray.png to see what we are working with.
 #
 
 # load random forest package for classification 
@@ -22,6 +20,7 @@ print(paste("Height in pixels: ", ncol(im_matrix)))
 print(paste("Width in pixels: ", nrow(im_matrix)))
  
 # create training data as DataFrame
+# here we have just picked some pixel values that we know to be land and not land
 pixel_values <- c(41, 60, 80, 0, 20, 40, 81, 100, 200)
 class_names <- c( 'land', 'land', 'land', 'other', 'other', 'other', 'other', 'other', 'other') 
 train_data <- data.frame(pixel_values, class_names)
@@ -55,4 +54,3 @@ title('input aerial image')
 
 image(probability_of_land_matrix > 0.5, col=gray.colors(255))
 title('land prediction')
-
