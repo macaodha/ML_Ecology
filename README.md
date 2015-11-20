@@ -4,7 +4,7 @@ R Code for Intro to Machine Learning Class Dec 2015
 ## Required R Packages
 randomForest
 Install by typing the following command into the R console:
-install.packages('randomForest')
+    install.packages('randomForest')
 
 
 

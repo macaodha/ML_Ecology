@@ -51,5 +51,3 @@ points(incorrect_predictions$Petal_Length, incorrect_predictions$Petal_Width, pc
 # insert legend
 legend_text <- c(levels(flower_data$Species), 'train data', 'incorrect predictions')
 legend(x='topleft', legend = legend_text, col = c(1, 2, 3, 1, 4), pch = c(16, 16, 16, 1, 4))
-
-

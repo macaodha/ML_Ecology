@@ -45,5 +45,3 @@ rf_predicted <- predict(rf, x_test)
 # plot single predictions
 points(x_test[[1]], rf_predicted[[1]], pch=16, col=2, cex=2)
 points(x_test[[1]], lm_predicted[[1]], pch=16, col=3, cex=2)
-
-

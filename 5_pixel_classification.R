@@ -56,6 +56,3 @@ dev.new()
 #image(probability_of_land_matrix, col=gray.colors(255))
 image(probability_of_land_matrix > 0.5, col=gray.colors(255))
 title('land prediction')
-
-
-

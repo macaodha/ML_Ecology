@@ -44,4 +44,3 @@ print(paste("Predicted species: ", predicted_species))
 
 # plot a ring around the nearest datapoint
 points(flower_data[closest_point, 1], flower_data[closest_point, 2], pch=1, cex=1.5)
-
