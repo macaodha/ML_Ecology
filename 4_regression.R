@@ -27,7 +27,7 @@ rf_train_fit <- predict(rf, train_data)
 plot(x, y, col=1)
 lines(x, rf_train_fit, type='l', col=2)
 abline(lin, col=3)
-legend_text = c('data', 'random forest', 'linear regression')
+legend_text <- c('data', 'random forest', 'linear regression')
 legend(x='topleft', legend=legend_text, col=c(1, 2, 3), pch=1)
 
 # generate a random test point (sample between 0 and 100)

@@ -35,24 +35,24 @@ test_data <- data.frame(pixel_values)
 
 # perform classification on the whole image
 # here we will get the random forest to return a probability 
-im_prediction <- predict(rf, test_data, type = 'prob') 
+im_prediction <- predict(rf, test_data, type='prob') 
 print(head(im_prediction))
 
 # extract the prediction for land - the first class
 probability_of_land <- im_prediction[,1]
 
-# convert back to matrix
-probability_of_land_matrix <- matrix(probability_of_land, nrow = nrow(im_matrix), ncol = ncol(im_matrix))
+# convert back to matrix so we can display it
+probability_of_land_matrix <- matrix(probability_of_land, nrow=nrow(im_matrix), ncol=ncol(im_matrix))
 
 # compute the percentage of pixels that are predicted as land
 percentage_of_land_cover <- sum(probability_of_land_matrix>0.5) / length(probability_of_land_matrix)
 print(paste("Predicted percentage of land pixels: ", 100*percentage_of_land_cover))
 
-# plot the input image
+# plot the input image and result side by side
+par(mfrow=c(1,2))
 image(im_matrix, col=gray.colors(255))
 title('input aerial image')
 
-dev.new()
-#image(probability_of_land_matrix, col=gray.colors(255))
 image(probability_of_land_matrix > 0.5, col=gray.colors(255))
 title('land prediction')
+

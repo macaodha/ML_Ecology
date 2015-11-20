@@ -34,8 +34,8 @@ points(test_point[1], test_point[2], pch=4, cex=2)
 distance <- apply(flower_data[,1:2],1,function(x)sqrt(sum((x-test_point)^2)))
 
 # find the point in the dataset that is closest to the test point and record its distance
-closest_point = which.min(distance)
-distance_to_closest = min(distance)
+closest_point <- which.min(distance)
+distance_to_closest <- min(distance)
 print(paste("Distance to closest point: ", distance_to_closest))
 
 # assume the test point is the same class as the datapoint it is closest too

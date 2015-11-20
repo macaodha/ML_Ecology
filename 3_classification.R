@@ -12,7 +12,7 @@ flower_data <- read.csv('data/flower_dataset.csv')
 
 # split the data into validation and test
 # randomly choose take 50 datapoints for validation
-validation_indices <- sample(1:nrow(flower_data), 50, replace = FALSE)
+validation_indices <- sample(1:nrow(flower_data), 50, replace=FALSE)
 # use the rest for training
 train_indices <- setdiff(seq(1, nrow(flower_data)), validation_indices)
 
@@ -40,7 +40,7 @@ print(paste("Number of incorrect predictions: ", number_incorrect_predictions))
 incorrect_predictions <- validation_data[correct_classifications==FALSE, ]
 
 # plot full dataset
-plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col=flower_data$Species, pch=16, asp=1)
 
 # draw circles around the training set
 points(train_data$Petal_Length, train_data$Petal_Width, pch=1, cex=1.5)
@@ -50,4 +50,4 @@ points(incorrect_predictions$Petal_Length, incorrect_predictions$Petal_Width, pc
 
 # insert legend
 legend_text <- c(levels(flower_data$Species), 'train data', 'incorrect predictions')
-legend(x='topleft', legend = legend_text, col = c(1, 2, 3, 1, 4), pch = c(16, 16, 16, 1, 4))
+legend(x='topleft', legend=legend_text, col=c(1, 2, 3, 1, 4), pch=c(16, 16, 16, 1, 4))
