@@ -6,6 +6,9 @@
 # load data from csv file
 flower_data <- read.csv('data/flower_dataset.csv')
 
+# plot dataset
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
+
 # create new test point
 #test_point <- c(3.1, 1.23)
 #test_point <- c(6.4, 2.2)
@@ -34,9 +37,6 @@ print(paste("Distance to closest point: ", distance_to_closest))
 # assume the test point is the same class as the datapoint it is closest too
 predicted_species <- flower_data[closest_point, ]$Species
 print(paste("Predicted species: ", predicted_species))
-
-# plot dataset
-plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
 
 # plot the test point as an X
 points(test_point[1], test_point[2], pch=4, cex=2)

@@ -23,7 +23,7 @@ lin <- lm(y~., data=train_data)
 rf <- randomForest(y ~ ., train_data)
 rf_train_fit <- predict(rf, train_data)
 
-# plot
+# plot the fitted linear model and the random forest
 plot(x, y, col=1)
 lines(x, rf_train_fit, type='l', col=2)
 abline(lin, col=3)
