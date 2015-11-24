@@ -17,7 +17,7 @@ y <- y_ideal + rnorm(length(y_ideal))*0.1
 train_data <- data.frame(x, y)
 
 # fit linear model
-lin <- lm(y~., data=train_data)
+lin <- lm(y ~ ., data=train_data)
 
 # fit random forest
 rf <- randomForest(y ~ ., train_data)

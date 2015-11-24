@@ -7,7 +7,7 @@
 flower_data <- read.csv('data/flower_dataset.csv')
 
 # plot dataset
-plot(flower_data$Petal_Length, flower_data$Petal_Width, col = flower_data$Species, pch=16, asp=1)
+plot(flower_data$Petal_Length, flower_data$Petal_Width, col=flower_data$Species, pch=16, asp=1)
 
 # create new test point
 #test_point <- c(3.1, 1.23)

@@ -12,7 +12,7 @@ flip_image <- function(m) t(m)[,nrow(m):1]
 # load random forest package for classification 
 library(randomForest)
 
-# load the grayscale image we wish to classify from the csv file
+# load the grayscale image we wish to classify from its csv file
 # 0 represents black and 255 represents white
 im <-read.csv('data/uk_ire_gray.csv', header=FALSE)
 height <- nrow(im)
@@ -60,10 +60,10 @@ prob_land <- im_prediction[,1]
 # convert the prediction from a vector to a matrix
 prob_land_matrix <- matrix(prob_land, nrow=nrow(im), ncol=ncol(im))
 
-# plot the prediction in a new image on the right
+# plot the prediction as a new image on the right
 image(flip_image(prob_land_matrix>0.5), col=gray.colors(255))
 title('land prediction')
 
 # compute the percentage of pixels that are predicted as land
-percent_land_cover <- sum(prob_land_matrix>0.5) / length(prob_land_matrix)
+percent_land_cover <- sum(prob_land_matrix>0.5) / (width*height)
 print(paste("Predicted percentage of land pixels: ", 100*percent_land_cover))
