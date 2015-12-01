@@ -10,17 +10,12 @@ flower_data <- read.csv('data/flower_dataset.csv')
 plot(flower_data$Petal_Length, flower_data$Petal_Width, col=flower_data$Species, pch=16, asp=1)
 
 # create new test point
-#test_point <- c(3.1, 1.23)
-#test_point <- c(6.4, 2.2)
-#test_point <- c(4.96, 1.5)
-#test_point <- c(2.0, 0.5)
-#test_point <- c(6.4, 2.2)
-#test_point <- c(4.3, 1.8)
+test_point <- c(3.2, 1.3)
 
-# random test point
-test_point <- runif(2, 0,1)
-test_point[1] <- min(flower_data[,1]) + test_point[1]*(max(flower_data[,1]) - min(flower_data[,1]))
-test_point[2] <- min(flower_data[,2]) + test_point[2]*(max(flower_data[,2]) - min(flower_data[,2]))
+# or try a random test point
+#test_point <- runif(2, 0,1)
+#test_point[1] <- min(flower_data[,1]) + test_point[1]*(max(flower_data[,1]) - min(flower_data#[,1]))
+#test_point[2] <- min(flower_data[,2]) + test_point[2]*(max(flower_data[,2]) - min(flower_data[,2]))
 
 # print test point values
 print(paste("Test Petal_Length: ", test_point[1]))
@@ -38,7 +33,7 @@ print(paste("Distance to closest point: ", distance_to_closest))
 predicted_species <- flower_data[closest_point, ]$Species
 print(paste("Predicted species: ", predicted_species))
 
-# plot the test point as an X
+# plot the test point as an 'x'
 points(test_point[1], test_point[2], pch=4, cex=2)
 
 # plot a ring around the nearest datapoint

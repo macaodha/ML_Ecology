@@ -29,15 +29,13 @@ print(paste("Number of validation samples: ", nrow(validation_data)))
 points(train_data$Petal_Length, train_data$Petal_Width, pch=1, cex=1.5)
 
 # train the classifier
-rf <- randomForest(Species ~ ., train_data)
+rf <- randomForest(Species ~ ., train_data, ntree=20)
 
 # make predictions for the validation set
 species_predictions <- predict(rf, validation_data) 
 
-# compute validation accuracy
+# count the number of correct predictions on the validation set
 correct_classifications <- validation_data$Species == species_predictions
-
-# count the number of correct predictions
 number_correct_predictions <- sum(correct_classifications)
 number_incorrect_predictions <- length(correct_classifications) - sum(correct_classifications)
 print(paste("Number of incorrect predictions: ", number_incorrect_predictions))
@@ -45,7 +43,7 @@ print(paste("Number of incorrect predictions: ", number_incorrect_predictions))
 # extract the incorrect predictions so we can plot them
 incorrect_predictions <- validation_data[correct_classifications==FALSE, ]
 
-# draw x's where we predict the wrong answer
+# draw an 'x' where we predict the wrong answer
 points(incorrect_predictions$Petal_Length, incorrect_predictions$Petal_Width, pch=4, cex=2, lwd=2, col=4)
 
 # insert legend
