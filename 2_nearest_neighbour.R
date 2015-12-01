@@ -7,15 +7,15 @@
 butterflies <- read.csv('data/butterflies.csv')
 
 # plot dataset
-plot(butterflies$Height, butterflies$Height, col=butterflies$Species, pch=16, asp=1)
+plot(butterflies$Width, butterflies$Height, col=butterflies$Species, pch=16, asp=1)
 
 # create new test point
 test_point <- c(3.2, 1.3)
 
 # or try a random test point
-#test_point <- runif(2, 0,1)
-#test_point[1] <- min(butterflies[,1]) + test_point[1]*(max(butterflies[,1]) - min(butterflies[,1]))
-#test_point[2] <- min(butterflies[,2]) + test_point[2]*(max(butterflies[,2]) - min(butterflies[,2]))
+test_point <- runif(2, 0,1)
+test_point[1] <- min(butterflies[,1]) + test_point[1]*(max(butterflies[,1]) - min(butterflies[,1]))
+test_point[2] <- min(butterflies[,2]) + test_point[2]*(max(butterflies[,2]) - min(butterflies[,2]))
 
 # print test point values
 print(paste("Test Width: ", test_point[1]))
