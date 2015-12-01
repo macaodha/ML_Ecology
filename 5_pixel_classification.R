@@ -43,7 +43,7 @@ train_pixels <- im[cbind(height-round(train_y*height), round(train_x*width))]
 train_data <- data.frame(pixel_values=train_pixels, class_names)
 
 # train classifer
-rf <- randomForest(class_names ~ ., train_data)
+rf <- randomForest(class_names ~ ., train_data, ntree=20)
 
 # create test data - convert image dataframe into pixels
 test_pixels <- unname(unlist(im))

@@ -10,17 +10,12 @@ butterflies <- read.csv('data/butterflies.csv')
 plot(butterflies$Height, butterflies$Height, col=butterflies$Species, pch=16, asp=1)
 
 # create new test point
-#test_point <- c(3.1, 1.23)
-#test_point <- c(6.4, 2.2)
-#test_point <- c(4.96, 1.5)
-#test_point <- c(2.0, 0.5)
-#test_point <- c(6.4, 2.2)
-#test_point <- c(4.3, 1.8)
+test_point <- c(3.2, 1.3)
 
-# random test point
-test_point <- runif(2, 0,1)
-test_point[1] <- min(butterflies[,1]) + test_point[1]*(max(butterflies[,1]) - min(butterflies[,1]))
-test_point[2] <- min(butterflies[,2]) + test_point[2]*(max(butterflies[,2]) - min(butterflies[,2]))
+# or try a random test point
+#test_point <- runif(2, 0,1)
+#test_point[1] <- min(butterflies[,1]) + test_point[1]*(max(butterflies[,1]) - min(butterflies[,1]))
+#test_point[2] <- min(butterflies[,2]) + test_point[2]*(max(butterflies[,2]) - min(butterflies[,2]))
 
 # print test point values
 print(paste("Test Width: ", test_point[1]))
@@ -38,7 +33,7 @@ print(paste("Distance to closest point: ", distance_to_closest))
 predicted_species <- butterflies[closest_point, ]$Species
 print(paste("Predicted species: ", predicted_species))
 
-# plot the test point as an X
+# plot the test point as an 'x'
 points(test_point[1], test_point[2], pch=4, cex=2)
 
 # plot a ring around the nearest datapoint
