@@ -34,11 +34,11 @@ rf <- randomForest(Species ~ ., train_data, ntree=20)
 # make predictions for the validation set
 species_predictions <- predict(rf, validation_data)
 
-# count the number of correct predictions on the validation set
+# compute the classification accuracy on the validation set
 correct_classifications <- validation_data$Species == species_predictions
-number_correct_predictions <- sum(correct_classifications)
-number_incorrect_predictions <- length(correct_classifications) - sum(correct_classifications)
-print(paste("Number of incorrect predictions: ", number_incorrect_predictions))
+percent_correct_predictions <- mean(correct_classifications)*100
+percent_incorrect_predictions <- (1 - mean(correct_classifications))*100
+print(paste("Classification accuracy (%): ", percent_correct_predictions))
 
 # extract the incorrect predictions so we can plot them
 incorrect_predictions <- validation_data[correct_classifications==FALSE, ]

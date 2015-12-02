@@ -52,7 +52,7 @@ To call:
 ret_value <- my_function('print this')
 
 Load csv into DataFrame:
-my_data <- read.csv('data/flower_dataset.csv')
+my_data <- read.csv('data/butterflies.csv')
 
 Get the column names:
 names(my_data)
@@ -81,4 +81,7 @@ dev.print(pdf, 'filename.pdf')
 
 Generate random uniform numbers. Here, generate 10 random numbers between 0 and 1:
 runif(10, 0,1)
+
+To clear open plots in RStudio
+dev.off()
 

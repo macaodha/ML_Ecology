@@ -52,9 +52,8 @@ test_data <- data.frame(pixel_values=test_pixels)
 # perform classification on the whole image
 # here we will get the random forest to return a probability 
 im_prediction <- predict(rf, test_data, type='prob') 
-print(head(im_prediction))
 
-# extract the prediction for land - the porbability of the first class
+# extract the prediction for land - the probability of the first class
 prob_land <- im_prediction[,1]
 
 # convert the prediction from a vector to a matrix
@@ -65,5 +64,5 @@ image(flip_image(prob_land_matrix>0.5), col=gray.colors(255))
 title('land prediction')
 
 # compute the percentage of pixels that are predicted as land
-percent_land_cover <- sum(prob_land_matrix>0.5) / (width*height)
-print(paste("Predicted percentage of land pixels: ", 100*percent_land_cover))
+percent_land_cover <- mean(prob_land_matrix>0.5)*100
+print(paste("Predicted percentage of land pixels (%) :", percent_land_cover))
