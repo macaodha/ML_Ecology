@@ -5,6 +5,9 @@ R Code for Introduction to Machine Learning Class at UCL
 Associated slides for the course can be found [here](http://www0.cs.ucl.ac.uk/staff/O.MacAodha/ml_intro/).
 
 ## Code
+#### 0 R Basics
+Overview of common R commands.
+
 #### 1 Plotting
 Loading a data set from a .csv file and plotting it. 
 

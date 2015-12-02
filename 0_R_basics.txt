@@ -1,3 +1,8 @@
+## 0 R basics
+#
+# Overview of basic R commands
+#
+
 To open the R enviornment from the command line:
 R
 
