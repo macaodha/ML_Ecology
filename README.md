@@ -2,7 +2,7 @@
 R Code for Introduction to Machine Learning Class at UCL
 
 ## Slides
-Associated slides for the course can be found [here](http://www.oisin.info/ml_intro/).
+Associated slides for the course can be found [here](https://homepages.inf.ed.ac.uk/omacaod/ml_intro/).
 
 ## Code
 #### 0 R Basics
